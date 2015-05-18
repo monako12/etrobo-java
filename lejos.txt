@@ -9,7 +9,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 
 NXT USB Driver をインストールする。
 
-http://www.robotc.net/download/nxt/
+http://downloads.robotc.net/drivers/NXT_USB_Driver_120.zip
 
 lejos NXTをインストールする
 
