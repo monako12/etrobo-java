@@ -1,0 +1,34 @@
+windows 32bit版をbootcampで入れる
+その際に
+https://discussionsjapan.apple.com/thread/10128620?tstart=0
+から32bit用のサポートソフトウェアをダウンロードする。
+ウィルス対策ソフト入れる
+
+JDKのインストール
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+NXT USB Driver をインストールする。
+
+http://www.robotc.net/download/nxt/
+
+lejos NXTをインストールする
+
+http://sourceforge.net/projects/nxt.lejos.p/files/
+
+leJOS NXJというフォルダがどこかにできるのでこれを
+C:\Program Files\におく
+
+
+cygwinをインストールする
+このとき下記のurlの方法でzshを入れる。
+http://u444u.info/l6Np
+
+cygwinを入れたら.zshrcに以下の二つを書き込む
+
+export CLASSPATH=/cygdrive/Program\ Files/leJOS\ NXJ/lib/nxt/classes.jar
+
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH:/cygdrive/c/Program\ Files/Jav\
+a/jdk1.8.0_45/bin:/cygdrive/c/Program\ Files/leJOS\ NXJ/bin
+
+
+

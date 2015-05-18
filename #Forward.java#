@@ -1,0 +1,18 @@
+/* 
+*Forward.java
+*/
+
+import lejos.platform.rcx.Motor;
+
+public class Forward{
+	public static void main(String[] args) {
+	Motor.C.setPower(3);
+
+	Motor.C.forward();
+	try{
+		Thread.sleep(2000);
+	} catch(Exception e){
+	}
+	Motor.C.stop();
+	}
+	}
