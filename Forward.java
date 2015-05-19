@@ -13,10 +13,11 @@ public class Forward{
 	Motor.B.backward();
 	
 	try{
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 	} catch(Exception e){
 	}
 	Motor.C.stop();
 	Motor.B.stop();
 	}
 	}
+
