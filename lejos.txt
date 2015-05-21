@@ -1,34 +1,13 @@
-windows 32bit版をbootcampで入れる
-その際に
-https://discussionsjapan.apple.com/thread/10128620?tstart=0
-から32bit用のサポートソフトウェアをダウンロードする。
-ウィルス対策ソフト入れる
-
-JDKのインストール
-http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-
-NXT USB Driver をインストールする。
-
+まずNXT_USB_Driberをwineでインストールする.
 http://downloads.robotc.net/drivers/NXT_USB_Driver_120.zip
+lejosをダウンロードしてコマンドにパスを通す.
+http://sourceforge.net/projects/nxt.lejos.p/files/0.9.1beta-3/leJOS_NXJ_0.9.1beta-3.tar.gz/download
+jvmのbit数を変換
+http://qiita.com/kozy4324/items/58b5a55b4c8673f4f104
+JAVAの32bit版の場所を教えてくれるコマンド
 
-lejos NXTをインストールする
+/usr/libexec/java_home -d32
+使用するjdkを変更するコマンド
 
-http://sourceforge.net/projects/nxt.lejos.p/files/
-
-leJOS NXJというフォルダがどこかにできるのでこれを
-C:\Program Files\におく
-
-
-cygwinをインストールする
-このとき下記のurlの方法でzshを入れる。
-http://u444u.info/l6Np
-
-cygwinを入れたら.zshrcに以下の二つを書き込む
-
-export CLASSPATH=/cygdrive/Program\ Files/leJOS\ NXJ/lib/nxt/classes.jar
-
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH:/cygdrive/c/Program\ Files/Jav\
-a/jdk1.8.0_45/bin:/cygdrive/c/Program\ Files/leJOS\ NXJ/bin
-
-
-
+export JAVA_HOME=$(/usr/libexec/java_home -d32)
+終わり
