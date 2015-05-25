@@ -3,7 +3,7 @@ public class black {
         LineCheck linecheck = new LineCheck();
         DriveMode drivemode = new DriveMode();
         ColorChecker colorchecker = new ColorChecker();
-
+	colorchecker.check();
         drivemode.Outline();
         linecheck.Check();
     }
