@@ -7,7 +7,6 @@ public class black {
 	//	ColorChecker colorchecker = new ColorChecker();
 	
 	//	colorchecker.Extract();
-        drivemode.Outline();
 	while(true){
 	    linecheck.Check();
 	}
