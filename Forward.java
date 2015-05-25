@@ -6,6 +6,7 @@ import lejos.nxt.Motor;
 import lejos.nxt.LightSensor;
 import lejos.nxt.*;
 
+<<<<<<< Updated upstream
 import java.lang.*;
 import java.lang.Exception;
 import java.lang.InterruptedException;
@@ -21,11 +22,16 @@ public class Forward {
 
 	public static void main(String[] args) {
 		/*
+=======
+public class Forward{
+	public static void main(String[] args) {
+>>>>>>> Stashed changes
 		Motor.C.setSpeed(720);
 		Motor.B.setSpeed(720);
 
 		Motor.C.backward();
 		Motor.B.backward();
+<<<<<<< Updated upstream
 		LightSensor lightsensor = new LightSensor(SensorPort.S3);
 
 		try {
@@ -129,3 +135,14 @@ public class Forward {
 	}
 }
 
+=======
+	
+	try{
+		Thread.sleep(4000);
+		} catch(Exception e){
+		}
+		Motor.C.stop();
+		Motor.B.stop();
+		}
+	}
+>>>>>>> Stashed changes
