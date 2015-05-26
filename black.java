@@ -4,15 +4,9 @@ public class black {
 		Button.ESCAPE.addButtonListener(new EscapeListener());
 		LineCheck linecheck = new LineCheck();
 		DriveMode drivemode = new DriveMode();
-		//	ColorChecker colorchecker = new ColorChecker();
-		//	colorchecker.Extract();
+		ColorChecker colorchecker = new ColorChecker();
+		colorchecker.Extract();
 
-		drivemode.Forward();
-
-		try {
-			Thread.sleep(2000);
-		} catch (Exception e) {
-		}
 		while(true){
 			linecheck.Check();
 		}

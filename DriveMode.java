@@ -24,9 +24,11 @@ public class DriveMode { //how to run
 	}
 
 	public void Forward(){
+		states = "forward";
+		LCD.drawString(states, 5, 5);
 		Motor.A.rotate(0);
-		Motor.B.setSpeed(400);
-		Motor.C.setSpeed(400);
+		Motor.B.setSpeed(200);
+		Motor.C.setSpeed(200);
 		Motor.B.backward();
 		Motor.C.backward();
 	}
@@ -40,10 +42,6 @@ public class DriveMode { //how to run
 		Motor.B.setSpeed(200);
 		Motor.B.backward();
 		Motor.A.forward();
-		try {
-			Thread.sleep(3000);
-		} catch (Exception e) {
-		}
 		Forward();
 	}
 
