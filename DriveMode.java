@@ -28,4 +28,7 @@ public class DriveMode { //how to run
 		Motor.B.backward();
 		Motor.C.backward();
 	}
+    public void Courceout(){
+        states = "courceout";
+    }
 }
