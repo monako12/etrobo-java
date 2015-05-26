@@ -9,9 +9,20 @@ public class black {
 
 		drivemode.Forward();
 
+		try {
+			Thread.sleep(2000);
+		} catch (Exception e) {
+		}
+		drivemode.CourseoutWhite();
+		try {
+			Thread.sleep(2000);
+		} catch (Exception e) {
+		}
+		drivemode.Forward();
+/*
 		while(true){
 			linecheck.Check();
-		}
+		}*/
 	}
 
 	static class EscapeListener implements ButtonListener {
