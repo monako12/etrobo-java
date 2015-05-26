@@ -32,6 +32,8 @@ public class DriveMode { //how to run
 	}
 
 	public void CourseoutWhite(){
+		states = "couseout";
+		LCD.drawString(states, 5, 5);
 		Motor.A.rotate(30);
 		Motor.B.stop();
 		Motor.C.stop();
@@ -42,6 +44,7 @@ public class DriveMode { //how to run
 			Thread.sleep(3000);
 		} catch (Exception e) {
 		}
+		Forward();
 	}
 
 	public void ContinueBlack(){
