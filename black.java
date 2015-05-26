@@ -15,7 +15,7 @@ public class black {
 		}
 		drivemode.CourseoutWhite();
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		} catch (Exception e) {
 		}
 		drivemode.Forward();

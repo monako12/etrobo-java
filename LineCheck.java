@@ -5,21 +5,13 @@ public class LineCheck {
     LightSensor ls = new LightSensor(SensorPort.S3);
     public String states = "inline";
     public void Check(){
-
         int ava = 0;
         int cur;
+        int limit_out_count = 10;
         if(ava == 0){
             ava = colorchecker.Extract();
         }
         cur = ls.readValue();
-
-	int ava = 0;
-	int cur;
-    int limit_out_count = 10;
-	if(ava == 0){
-	    ava = colorchecker.Extract();
-	}
-	cur = ls.readValue();
 
 
         if(cur < ava) {
@@ -29,8 +21,8 @@ public class LineCheck {
 
             drivemode.Outline();
             limit_out_count--;
-	        drivemode.Outline();
-        }if(limit_out_count = 0){
+            drivemode.Outline();
+        }if(limit_out_count == 0){
             drivemode.CourseoutWhite();
         }
     }
