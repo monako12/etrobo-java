@@ -1,10 +1,24 @@
+import lejos.nxt.*;
 public class black {
     public static void main(String[] args){
-        LineCheck linecheck = new LineCheck();
+	Button.ESCAPE.addButtonListener(new EscapeListener());
+	    LineCheck linecheck = new LineCheck();
         DriveMode drivemode = new DriveMode();
-        ColorChecker colorchecker = new ColorChecker();
-	colorchecker.check();
-        drivemode.Outline();
-        linecheck.Check();
+	//	ColorChecker colorchecker = new ColorChecker();
+	
+	//	colorchecker.Extract();
+	while(true){
+	    linecheck.Check();
+	}
+    }
+    
+    static class EscapeListener implements ButtonListener {
+	public void buttonPressed(Button button) {
+	    System.exit(0);
+	}
+	
+	public void buttonReleased(Button button) {
+	    System.exit(0);
+	}
     }
 }
