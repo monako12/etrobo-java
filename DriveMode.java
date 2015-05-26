@@ -30,6 +30,7 @@ public class DriveMode { //how to run
 		Motor.B.backward();
 		Motor.C.backward();
 	}
+<<<<<<< HEAD
 
 	public void CourseoutWhite(){
 		Motor.A.rotate(30);
@@ -48,4 +49,9 @@ public class DriveMode { //how to run
 
 	}
 
+=======
+    public void Courceout(){
+        states = "courceout";
+    }
+>>>>>>> origin/master
 }
