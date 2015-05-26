@@ -3,20 +3,24 @@ import java.*;
 import lejos.nxt.*;
 public class DriveMode { //how to run
 	String states;
-	public void Inline(){
+	public void Inline(boolean check){
 		states = "inline";
 		LCD.drawString(states,5,5);
-		Motor.A.rotate(20);
+		if(false == check) {
+			Motor.A.rotate(20);
+		}
 		Motor.B.setSpeed(200);
 		Motor.C.setSpeed(90);
 		Motor.B.backward();
 		Motor.C.backward();
 	}
 
-	public void Outline(){
+	public void Outline(boolean check){
 		states = "outline";
 		LCD.drawString(states, 5, 5);
-		Motor.A.rotate(-15);
+		if(true == check) {
+			Motor.A.rotate(-15);
+		}
 		Motor.B.setSpeed(90);
 		Motor.C.setSpeed(200);
 		Motor.B.backward();
