@@ -19,12 +19,16 @@ public class LineCheck {
             ava = colorchecker.ganegane();
         }
         cur = ls.readNormalizedValue();
+        LCD.drawInt(cur,0,3);
         if(limit_out_count <= 0){
+            cur = ls.readNormalizedValue();
             drivemode.CourseoutWhite();
         }if(cur < ava) {
+            cur = ls.readNormalizedValue();
             limit_out_count = Limit.LIMIT;
             drivemode.Inline(check);
         }else if(ava < cur){
+            cur = ls.readNormalizedValue();
             drivemode.Outline(check);
             limit_out_count--;
             LCD.drawInt(limit_out_count,0,2);
