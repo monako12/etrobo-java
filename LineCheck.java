@@ -18,7 +18,7 @@ public class LineCheck {
         if(ava == 0){
             ava = colorchecker.ganegane();
         }
-        cur = ls.readValue();
+        cur = ls.readNormalizedValue();
         if(limit_out_count <= 0){
             drivemode.CourseoutWhite();
         }if(cur < ava) {
