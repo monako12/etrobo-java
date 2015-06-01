@@ -5,7 +5,7 @@ public class LineCheck {
     public class Limit {
         public static final int LIMIT = 500;
     }
-
+    //s
     boolean check = false;
     int limit_out_count = Limit.LIMIT;
     DriveMode drivemode = new DriveMode();
