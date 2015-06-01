@@ -53,10 +53,6 @@ public class DriveMode { //how to run
 		//Motor.C.forward();
 		Forward();
 		*/
-		try {
-			Thread.sleep(5000);
-		} catch (Exception e) {
-		}
 	}
 
 	public void ContinueBlack(){
