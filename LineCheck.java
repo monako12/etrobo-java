@@ -22,7 +22,7 @@ public class LineCheck {
         cur = ls.readValue();
         if(limit_out_count <= 0){
             drivemode.CourseoutWhite();
-        }else if(cur < ava) {
+        }if(cur < ava) {
             limit_out_count = Limit.LIMIT;
             drivemode.Inline(check);
         }else if(ava < cur){
