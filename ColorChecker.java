@@ -12,13 +12,13 @@ public class ColorChecker {
 	while(Valuecheck != true){
 	    if (touch.isPressed() == true) {
 		Valuecheck = true;
-		min_lightValue = SensorPort.S3.readValue();
+		min_lightValue = light.readNormalizedValue();
 		LCD.drawInt(min_lightValue,0,1);
 		try {
 		    Thread.sleep(4000);
 		} catch (Exception e) {
 		}
-		max_lightValue = SensorPort.S3.readValue();
+		max_lightValue = light.readNormalizedValue();
 		LCD.drawInt(max_lightValue,0,2);
 	    }
 	}
