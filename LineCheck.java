@@ -3,7 +3,7 @@ import lejos.nxt.*;
 public class LineCheck {
 
     public class Limit {
-        public static final int LIMIT = 3;
+        public static final int LIMIT = 500;
     }
 
     boolean check = false;
