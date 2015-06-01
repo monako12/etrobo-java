@@ -8,7 +8,6 @@ public class LineCheck {
 
     boolean check = false;
     int limit_out_count = Limit.LIMIT;
-    boolean check=false;
     DriveMode drivemode = new DriveMode();
     ColorChecker colorchecker = new ColorChecker();
     LightSensor ls = new LightSensor(SensorPort.S3);
