@@ -6,6 +6,7 @@ public class LineCheck {
         public static final int LIMIT = 3;
     }
 
+    int limit_out_count = Limit.LIMIT;
     DriveMode drivemode = new DriveMode();
     ColorChecker colorchecker = new ColorChecker();
     LightSensor ls = new LightSensor(SensorPort.S3);
@@ -13,7 +14,6 @@ public class LineCheck {
     public void Check(){
         int ava = 0;
         int cur;
-        int limit_out_count = Limit.LIMIT;
         if(ava == 0){
             ava = colorchecker.Extract();
         }
@@ -24,10 +24,9 @@ public class LineCheck {
             limit_out_count = Limit.LIMIT;
             drivemode.Inline();
         }if(ava < cur){
-
             drivemode.Outline();
             limit_out_count--;
-            drivemode.Outline();
+            LCD.drawInt(limit_out_count,0,2);
         }if(limit_out_count == 0){
             drivemode.CourseoutWhite();
         }
