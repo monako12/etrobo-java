@@ -7,7 +7,11 @@ public class DriveMode { //how to run
 		states = "inline";
 		LCD.drawString(states,5,5);
 		if(false == check) {
-			Motor.A.rotate(10);
+			Motor.A.rotate(140);
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+			}
 		}
 		Motor.B.setSpeed(200);
 		Motor.C.setSpeed(90);
@@ -19,7 +23,11 @@ public class DriveMode { //how to run
 		states = "outline";
 		LCD.drawString(states, 5, 5);
 		if(true == check) {
-			Motor.A.rotate(-10);
+			Motor.A.rotate(-70);
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+			}
 		}
 		Motor.B.setSpeed(90);
 		Motor.C.setSpeed(200);

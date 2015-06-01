@@ -11,9 +11,9 @@ public class LineCheck {
     DriveMode drivemode = new DriveMode();
     ColorChecker colorchecker = new ColorChecker();
     LightSensor ls = new LightSensor(SensorPort.S3);
+    public static int ava = 0;
     public String states = "inline";
     public void Check(){
-        int ava = 0;
         int cur;
         if(ava == 0){
             ava = colorchecker.Extract();

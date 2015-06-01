@@ -3,9 +3,6 @@ public class black {
 	public static void main(String[] args){
 		Button.ESCAPE.addButtonListener(new EscapeListener());
 		LineCheck linecheck = new LineCheck();
-		DriveMode drivemode = new DriveMode();
-		ColorChecker colorchecker = new ColorChecker();
-		colorchecker.Extract();
 
 		while(true){
 			linecheck.Check();
