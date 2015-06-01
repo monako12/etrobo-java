@@ -28,7 +28,7 @@ public class LineCheck {
             drivemode.Outline(check);
             limit_out_count--;
             LCD.drawInt(limit_out_count,0,2);
-        }if(limit_out_count == 0){
+        }if(limit_out_count <= 0){
             drivemode.CourseoutWhite();
         }
     }

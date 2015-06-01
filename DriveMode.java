@@ -35,6 +35,10 @@ public class DriveMode { //how to run
 		Motor.C.setSpeed(200);
 		Motor.B.backward();
 		Motor.C.backward();
+		try {
+			Thread.sleep(1000);
+		} catch (Exception e) {
+		}
 	}
 
 	public void CourseoutWhite(){
@@ -45,7 +49,7 @@ public class DriveMode { //how to run
 		Motor.C.stop();
 		Motor.B.setSpeed(200);
 		Motor.B.backward();
-		Motor.C.forward();
+		//Motor.C.forward();
 		Forward();
 	}
 
