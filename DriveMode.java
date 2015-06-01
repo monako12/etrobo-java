@@ -63,6 +63,8 @@ public class DriveMode { //how to run
 		*/
 		Motor.B.stop();
 		Motor.C.stop();
+		Motor.B.setSpeed(2000);
+		Motor.B.backward();
 		try {
 			Thread.sleep(5000);
 		} catch (Exception e) {
