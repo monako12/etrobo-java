@@ -7,10 +7,14 @@ public class DriveMode { //how to run
 		states = "inline";
 		LCD.drawString(states,5,5);
 		if(false == check) {
-			Motor.A.rotate(20);
+			Motor.A.rotate(140);
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+			}
 		}
-		Motor.B.setSpeed(200);
-		Motor.C.setSpeed(90);
+		Motor.B.setSpeed(100);
+		Motor.C.setSpeed(80);
 		Motor.B.backward();
 		Motor.C.backward();
 	}
@@ -19,10 +23,14 @@ public class DriveMode { //how to run
 		states = "outline";
 		LCD.drawString(states, 5, 5);
 		if(true == check) {
-			Motor.A.rotate(-15);
+			Motor.A.rotate(-70);
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+			}
 		}
-		Motor.B.setSpeed(90);
-		Motor.C.setSpeed(200);
+		Motor.B.setSpeed(80);
+		Motor.C.setSpeed(100);
 		Motor.B.backward();
 		Motor.C.backward();
 	}
@@ -53,6 +61,9 @@ public class DriveMode { //how to run
 		//Motor.C.forward();
 		Forward();
 		*/
+		Motor.B.setSpeed(2000);
+		Motor.B.backward();
+		Motor.C.stop();
 	}
 
 	public void ContinueBlack(){

@@ -3,27 +3,30 @@ import lejos.nxt.*;
 public class ColorChecker {
     int min_lightValue = 0;
     int max_lightValue = 0;
-    int lightAverage;
+   public  int lightAverage;
     boolean Valuecheck = false;
     
     LightSensor light = new LightSensor(SensorPort.S3);
     TouchSensor touch = new TouchSensor(SensorPort.S2);
-    public int Extract(){
+    public void Extract(){
 	while(Valuecheck != true){
 	    if (touch.isPressed() == true) {
 		Valuecheck = true;
 		min_lightValue = light.readNormalizedValue();
-        LCD.drawString("max_value",0,1);
+		LCD.drawInt(min_lightValue,0,1);
 		try {
 		    Thread.sleep(4000);
 		} catch (Exception e) {
 		}
 		max_lightValue = light.readNormalizedValue();
-        LCD.drawString("min_value",0,1);
+		LCD.drawInt(max_lightValue,0,2);
 	    }
 	}
 	lightAverage = (min_lightValue + max_lightValue)/2;
 	LCD.drawInt(lightAverage,0,3);
+    }
+    public int ganegane(){
 	return lightAverage;
+
     }
 }
