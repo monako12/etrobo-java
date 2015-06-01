@@ -14,7 +14,6 @@ public class LineCheck {
         int ava = 0;
         int cur;
         int limit_out_count = Limit.LIMIT;
-        boolean check=false;
         if(ava == 0){
             ava = colorchecker.Extract();
         }
@@ -23,13 +22,12 @@ public class LineCheck {
 
         if(cur < ava) {
             limit_out_count = Limit.LIMIT;
-            drivemode.Inline(check);
-            check = true;
+            drivemode.Inline();
         }if(ava < cur){
 
-            drivemode.Outline(check);
+            drivemode.Outline();
             limit_out_count--;
-            check = false;
+            drivemode.Outline();
         }if(limit_out_count == 0){
             drivemode.CourseoutWhite();
         }
