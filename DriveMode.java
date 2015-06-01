@@ -45,7 +45,7 @@ public class DriveMode { //how to run
 		Motor.C.stop();
 		Motor.B.setSpeed(200);
 		Motor.B.backward();
-		Motor.A.forward();
+		Motor.C.forward();
 		Forward();
 	}
 
