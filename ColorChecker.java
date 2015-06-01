@@ -26,6 +26,4 @@ public class ColorChecker {
 	LCD.drawInt(lightAverage,0,3);
 	return lightAverage;
     }
-
-    
 }

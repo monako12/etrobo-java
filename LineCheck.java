@@ -8,26 +8,27 @@ public class LineCheck {
 
     boolean check = false;
     int limit_out_count = Limit.LIMIT;
+    boolean check = false;
     DriveMode drivemode = new DriveMode();
     ColorChecker colorchecker = new ColorChecker();
     LightSensor ls = new LightSensor(SensorPort.S3);
-    public static int ava = 0;
     public String states = "inline";
     public void Check(){
+        int ava = 0;
         int cur;
         if(ava == 0){
             ava = colorchecker.Extract();
         }
         cur = ls.readValue();
-        if(cur < ava) {
+        if(limit_out_count <= 0){
+            drivemode.CourseoutWhite();
+        }else if(cur < ava) {
             limit_out_count = Limit.LIMIT;
             drivemode.Inline(check);
-        }if(ava < cur){
+        }else if(ava < cur){
             drivemode.Outline(check);
             limit_out_count--;
             LCD.drawInt(limit_out_count,0,2);
-        }if(limit_out_count <= 0){
-            drivemode.CourseoutWhite();
         }
     }
 }
