@@ -6,6 +6,7 @@ public class LineCheck {
         public static final int LIMIT = 3;
     }
 
+    boolean check = false;
     int limit_out_count = Limit.LIMIT;
     DriveMode drivemode = new DriveMode();
     ColorChecker colorchecker = new ColorChecker();
@@ -18,8 +19,6 @@ public class LineCheck {
             ava = colorchecker.Extract();
         }
         cur = ls.readValue();
-
-
         if(cur < ava) {
             limit_out_count = Limit.LIMIT;
             drivemode.Inline();
@@ -27,7 +26,7 @@ public class LineCheck {
             drivemode.Outline();
             limit_out_count--;
             LCD.drawInt(limit_out_count,0,2);
-        }if(limit_out_count == 0){
+        }if(limit_out_count <= 0){
             drivemode.CourseoutWhite();
         }
     }
