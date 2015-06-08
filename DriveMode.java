@@ -4,8 +4,13 @@ import lejos.nxt.*;
 public class DriveMode { //how to run
 	String states;
 	public void Inline(boolean check){
-		states = "inline";
+	    states = "inline";
 		LCD.drawString(states,5,5);
+		if(80<=Motor.A.getTachoCount()){
+		}else if(80>=Motor.A.getTachoCount()){
+		    Motor.A.rotate(40);		
+		    
+		}
 		Motor.B.setSpeed(100);
 		Motor.C.setSpeed(80);
 		Motor.B.backward();
@@ -14,7 +19,12 @@ public class DriveMode { //how to run
 
 	public void Outline(boolean check){
 		states = "outline";
-		LCD.drawString(states, 5, 5);
+		LCD.drawString(states,5,5);
+		if(-80>=Motor.A.getTachoCount()){
+		}else if(-80<=Motor.A.getTachoCount()){
+		    Motor.A.rotate(-40);
+
+		}
 		Motor.B.setSpeed(80);
 		Motor.C.setSpeed(100);
 		Motor.B.backward();
