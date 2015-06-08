@@ -6,9 +6,9 @@ public class DriveMode { //how to run
 	public void Inline(boolean check){
 	    states = "inline";
 		LCD.drawString(states,5,5);
-		if(40<=Motor.A.getTachoCount()){
-		}else if(40>=Motor.A.getTachoCount()){
-		    Motor.A.rotate(20);		
+		if(80<=Motor.A.getTachoCount()){
+		}else if(80>=Motor.A.getTachoCount()){
+		    Motor.A.rotate(40);		
 		    
 		}
 		Motor.B.setSpeed(100);
@@ -20,9 +20,9 @@ public class DriveMode { //how to run
 	public void Outline(boolean check){
 		states = "outline";
 		LCD.drawString(states,5,5);
-		if(-40>=Motor.A.getTachoCount()){
-		}else if(-40<=Motor.A.getTachoCount()){
-		    Motor.A.rotate(-20);
+		if(-80>=Motor.A.getTachoCount()){
+		}else if(-80<=Motor.A.getTachoCount()){
+		    Motor.A.rotate(-40);
 
 		}
 		Motor.B.setSpeed(80);
