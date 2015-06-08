@@ -3,14 +3,13 @@ import lejos.nxt.*;
 public class black {
 	public static void main(String[] args){
 		Button.ESCAPE.addButtonListener(new EscapeListener());
-		LineCheck linecheck = new LineCheck();
-	        ColorChecker color = new ColorChecker();
-		color.Extract();
-		color.ganegane();
-
-		while(true){
-			linecheck.Check();
-		}
+        LineCheck linecheck = new LineCheck();
+        while(true){
+            linecheck.Check();
+        }
+	    //ColorChecker color = new ColorChecker();
+		//color.Extract();
+		//color.ganegane();
 	}
 
 	static class EscapeListener implements ButtonListener {
