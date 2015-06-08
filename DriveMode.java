@@ -8,8 +8,7 @@ public class DriveMode { //how to run
 		LCD.drawString(states,5,5);
 		if(80<=Motor.A.getTachoCount()){
 		}else if(80>=Motor.A.getTachoCount()){
-		    Motor.A.rotate(40);		
-		    
+		    Motor.A.rotate(40);
 		}
 		Motor.B.setSpeed(100);
 		Motor.C.setSpeed(80);
@@ -48,8 +47,13 @@ public class DriveMode { //how to run
 	public void CourseoutWhite(){
 		states = "couseout";
 		LCD.drawString(states, 5, 5);
-		Motor.B.setSpeed(0);
-		Motor.C.setSpeed(100);
+		if(80<=Motor.A.getTachoCount()){
+		}else if (80>=Motor.A.getTachoCount()){
+			Motor.A.rotate(40);
+		}
+		Motor.B.setSpeed(100);
+		Motor.C.setSpeed(80);
+		Motor.B.backward();
 		Motor.C.backward();
 	}
 
