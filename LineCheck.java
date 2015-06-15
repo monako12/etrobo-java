@@ -15,10 +15,11 @@ public class LineCheck {
             ava = colorchecker.Extract();
         }
 	cur = ls.readNormalizedValue();
+	LCD.drawInt(cur, 0, 3);
 	cur = cur - ava;
 	nowtacho = Motor.A.getTachoCount();
 	cur = cur^3; 
-	LCD.drawInt(cur, 0, 4);
+	//	LCD.drawInt(cur, 0, 4);
 	drivemode.Forward(cur);
     }	
 }
