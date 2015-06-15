@@ -7,7 +7,7 @@ public class DriveMode { //how to run
 	public void Forward(int ch){
 		a = Math.abs(Motor.A.getTachoCount());
 		LCD.drawInt(a, 0, 4);
-		if(a < 400 || (0 > ch * Motor.A.getTachoCount())) {
+		if(a < 500 || (0 > ch * Motor.A.getTachoCount())) {
 			Motor.A.setSpeed(500);
 			Motor.A.rotate(ch);
 		}
