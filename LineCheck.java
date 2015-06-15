@@ -7,23 +7,18 @@ public class LineCheck {
     ColorChecker colorchecker = new ColorChecker();
     LightSensor ls = new LightSensor(SensorPort.S3);
     public String states = "inline";
+    static int ava = 0;
     public void Check() {
-        int ava = 0;
         int cur;
+	int nowtacho = 0;
         if (ava == 0) {
             ava = colorchecker.Extract();
         }
-        cur = ls.readNormalizedValue();
-        LCD.drawInt(cur, 0, 2);
-        if (cur < ava) {
-            limit_out_count = 1000;
-            drivemode.Inline(check);
-        }if (limit_out_count <= 0) {
-            drivemode.CourseoutWhite();
-        }else if (cur > ava) {
-            limit_out_count --;
-            LCD.drawInt(limit_out_count, 0, 3);
-            drivemode.Outline(check);
-        }
-    }
+	cur = ls.readNormalizedValue();
+	cur = cur - ava;
+	nowtacho = Motor.A.getTachoCount();
+	cur = cur^3; 
+	LCD.drawInt(cur, 0, 4);
+	drivemode.Forward(cur);
+    }	
 }

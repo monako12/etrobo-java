@@ -15,17 +15,17 @@ public class ColorChecker {
             if (touch.isPressed() == true) {
                 Valuecheck = true;
                 min_lightValue = light.readNormalizedValue();
-                //LCD.drawInt(min_lightValue,0,1);
+                LCD.drawInt(min_lightValue,0,1);
                 try {
                     Thread.sleep(4000);
                 } catch (Exception e) {
                 }
                 max_lightValue = light.readNormalizedValue();
-                //LCD.drawInt(max_lightValue,0,2);
+                LCD.drawInt(max_lightValue,0,2);
             }
         }
         lightAverage = (min_lightValue + max_lightValue) / 2;
-        LCD.drawInt(lightAverage, 0, 1);
+        LCD.drawInt(lightAverage, 0, 3);
         return lightAverage;
     }
 }
