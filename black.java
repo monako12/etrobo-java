@@ -1,8 +1,12 @@
 import lejos.nxt.*;
 //blackies
 public class black {
+	ColorChecker color = new ColorChecker();
 	public static void main(String[] args){
+
 		Button.ESCAPE.addButtonListener(new EscapeListener());
+		Button.RIGHT.addButtonListener(new RightListener());
+		Button.LEFT.addButtonListener(new LeftListener());
         LineCheck linecheck = new LineCheck();
         while(true){
             linecheck.Check();
@@ -21,4 +25,21 @@ public class black {
 			System.exit(0);
 		}
 	}
+
+	static class RightListener implements ButtonListener {
+
+		public void buttonPressed(Button button) {
+        ColorChecker.kuro();
+
+		}
+		public void buttonReleased(Button button){}
+	}
+		static class LeftListener implements ButtonListener {
+
+			public void buttonPressed(Button button) {
+				ColorChecker.shiro();
+
+			}
+			public void buttonReleased(Button button){}
+		}
 }
