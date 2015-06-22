@@ -26,9 +26,9 @@ public class LineCheck {
         diff[0] = diff[1];
         diff[1] = cur - ava;
         integral += (diff[1] + diff[0])/2*delta_t;
-        p = *diff[1];
-        i = 2*integral;
-        d = 2*(diff[1]-diff[0])/delta_t;
+        p = 0.34*diff[1];
+        i = 0.34*integral;
+        d = 0.20*(diff[1]-diff[0])/delta_t;
         cur = p+i+d;
         //cur = cur - ava;
         //cur = cur^3;
