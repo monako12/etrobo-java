@@ -3,6 +3,7 @@ import java.*;
 import java.util.Map;
 import java.lang.Object;
 
+
 public class LineCheck {
     boolean check = false;
     static int limit_out_count;
