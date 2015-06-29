@@ -4,7 +4,6 @@ import java.util.Map;
 import java.lang.Object;
 
 public class LineCheck {
-
     boolean check = false;
     static int limit_out_count;
     DriveMode drivemode = new DriveMode();
@@ -27,12 +26,12 @@ public class LineCheck {
         diff[1] = cur - ava;
         integral += (diff[1] + diff[0])/2*delta_t;
         p = 0.34*diff[1];
-        i = 0.34*integral;
+        i = 0.50*integral;
         d = 0.20*(diff[1]-diff[0])/delta_t;
         cur = p+i+d;
         //cur = cur - ava;
         //cur = cur^3;
-        //	LCD.drawInt(cur, 0, 4);
+        //LCD.drawInt(cur, 0, 4);
         drivemode.Forward((int)cur);
     }
 }
