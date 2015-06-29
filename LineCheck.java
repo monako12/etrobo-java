@@ -3,7 +3,6 @@ import java.*;
 import java.util.Map;
 import java.lang.Object;
 
-
 public class LineCheck {
     boolean check = false;
     static int limit_out_count;
@@ -13,6 +12,7 @@ public class LineCheck {
     public String states = "inline";
     static int ava = 0;
     public void Check() {
+        double cur2;
         double p,i,d;
         double delta_t = 2;
         double diff[] = new double[3];
@@ -27,12 +27,13 @@ public class LineCheck {
         diff[1] = cur - ava;
         integral += (diff[1] + diff[0])/2*delta_t;
         p = 0.34*diff[1];
-        i = 0.50*integral;
-        d = 0.20*(diff[1]-diff[0])/delta_t;
+        i = 0.40*integral;
+        d = 0.25*(diff[1]-diff[0])/delta_t;
         cur = p+i+d;
+        cur2 = p/2+i+d;
         //cur = cur - ava;
         //cur = cur^3;
         //LCD.drawInt(cur, 0, 4);
-        drivemode.Forward((int)cur);
+        drivemode.Forward((int)cur,(int)cur2);
     }
 }
