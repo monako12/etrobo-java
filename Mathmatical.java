@@ -8,9 +8,9 @@ public class Mathmatical{
     double i_coe;
     double d_coe;
     Mathmatical(double p_coe,double i_coe,double d_coe){
-        this.p_coe = p;
-        this.i_coe = i;
-        this.d_coe = d;
+        this.p_coe = p_coe;
+        this.i_coe = i_coe;
+        this.d_coe = d_coe;
 
     }
     public double pid(int ava,double cur){
@@ -18,6 +18,7 @@ public class Mathmatical{
         double delta_t = 2;
         double diff[] = new double[3];
         double integral = 0;
+        double cur2;
         diff[0] = diff[1];
         diff[1] = cur - ava;
         integral += (diff[1] + diff[0])/2*delta_t;

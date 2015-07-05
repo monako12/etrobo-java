@@ -11,15 +11,16 @@ public class LineCheck {
     LightSensor ls = new LightSensor(SensorPort.S3);
     public String states = "inline";
     static int ava = 0;
-    if (ava == 0) {
-        ava = colorchecker.Extract();
-    }
+
     Mathmatical frwh =  new Mathmatical(0.34,0.34,0.34);
     Mathmatical riwh =  new Mathmatical(0.34,0.34,0.34);
     Mathmatical lewh =  new Mathmatical(0.34,0.34,0.34);
     double cur;
     double cur2 = 0;
     public void Check() {
+        if (ava == 0) {
+            ava = colorchecker.Extract();
+        }
         cur = ls.readNormalizedValue();
         cur = frwh.pid(ava,cur);
         drivemode.Forward((int) cur, (int) cur2);
