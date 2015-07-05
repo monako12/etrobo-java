@@ -14,10 +14,10 @@ public class DriveMode { //how to run
             Motor.A.setSpeed(500);
             Motor.A.rotate(fw);
         }
-        b = fw2/2*b;
+        b = 5*b;
         LCD.drawInt(fw2, 0, 6);
-        Motor.B.setSpeed(60 + b);
-        Motor.C.setSpeed(60 - b);
+        Motor.B.setSpeed(20 + b);
+        Motor.C.setSpeed(20 - b);
         Motor.B.backward();
         Motor.C.backward();
     }
