@@ -28,8 +28,8 @@ public class ColorChecker {
         max_lightValue = light.readNormalizedValue();
 
     }
-public static void shiro(){
+    public static void shiro(){
 
-    min_lightValue = light.readNormalizedValue();
-}
+        min_lightValue = light.readNormalizedValue();
+    }
 }

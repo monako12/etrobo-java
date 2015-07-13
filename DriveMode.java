@@ -21,4 +21,13 @@ public class DriveMode { //how to run
         Motor.B.backward();
         Motor.C.backward();
     }
+
+    public void graytask(){
+        try {
+            Motor.B.stop();
+            Motor.C.stop();
+            Thread.sleep(10000);
+        }catch (Exception e){
+        }
+    }
 }
