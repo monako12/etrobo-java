@@ -10,14 +10,14 @@ public class DriveMode { //how to run
         b = Math.signum(fw);
         LCD.drawInt(a, 0, 4);
         LCD.drawInt(fw, 0, 5);
-        if (a < 500 || (0 > fw * Motor.A.getTachoCount())) {
+        if (a < 400 || (0 > fw * Motor.A.getTachoCount())) {
             Motor.A.setSpeed(500);
             Motor.A.rotate(fw);
         }
-        b = 20*b;
+        b = 30*b;
         LCD.drawInt(fw2, 0, 6);
-        Motor.B.setSpeed(50 + b);
-        Motor.C.setSpeed(50 - b);
+        Motor.B.setSpeed(80 + b);
+        Motor.C.setSpeed(80 - b);
         Motor.B.backward();
         Motor.C.backward();
     }

@@ -1,4 +1,5 @@
 import java.*;
+import lejos.nxt.*;
 import java.util.Map;
 import java.lang.Object;
 
@@ -36,8 +37,5 @@ public class LineCheck {
         if ( haiiro_min < now && now < haiiro_max) {
                 drivemode.graytask();
             }
-
-        
-
     }
 }
