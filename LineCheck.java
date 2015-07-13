@@ -11,31 +11,38 @@ public class LineCheck {
     LightSensor ls = new LightSensor(SensorPort.S3);
     public String states = "inline";
     static int ava = 0;
-    public double diff[] = new double[3]; //diff[2] equales diff over diff
-
-    Mathmatical frwh =  new Mathmatical(0.34,0.34,0.34);
-    Mathmatical riwh =  new Mathmatical(0.34,0.34,0.34);
-    Mathmatical lewh =  new Mathmatical(0.34,0.34,0.34);
+    static int i = 0;
+    static int t = 0;
+    Mathmatical frwh =  new Mathmatical(0.34,0.34,0.34,1);
+    Mathmatical riwh =  new Mathmatical(0.34,0.34,0.34,0);
+    Mathmatical lewh =  new Mathmatical(0.34,0.34,0.34,0);
     double cur;
-    double cur2 = 0;
+    double cur2;
     public void Check() {
         if (ava == 0) {
             ava = colorchecker.Extract();
         }
         cur = ls.readNormalizedValue();
         GrayCheck(cur);
+        cur2 = riwh.pid(ava,cur);
         cur = frwh.pid(ava,cur);
+
         drivemode.Forward((int) cur, (int) cur2);
     }
+    public void GrayCheck(double now){
+        int haiiro = colorchecker.haiiroreturn();
+        int haiiro_min = haiiro-3;
+        int haiiro_max = haiiro+3;
 
-    public void GrayCheck(double cur) {//diff[1] is before varue
-        diff[0] = cur;
-        LCD.clear();
-        LCD.drawInt((int)(diff[2] - Math.abs(diff[1]-cur)), 4, 4);
-        if(Math.abs(diff[2] - Math.abs(diff[1]-cur)) < 25 && Math.abs(diff[2] - Math.abs(diff[1]-cur)) > 17){
-            drivemode.graytask();
+        if ( haiiro_min < now && now < haiiro_max) {
+            if(i == 0 ){
+
+            }
+            if(t == 8) {
+                drivemode.graytask();
+            }
+
         }
-        diff[2] = Math.abs(diff[1]-cur);
-        diff[1] = diff[0];
+
     }
 }

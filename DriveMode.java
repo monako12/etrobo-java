@@ -14,19 +14,20 @@ public class DriveMode { //how to run
             Motor.A.setSpeed(500);
             Motor.A.rotate(fw);
         }
-        b = 5*b;
+        b = 20*b;
         LCD.drawInt(fw2, 0, 6);
-        Motor.B.setSpeed(20 + b);
-        Motor.C.setSpeed(20 - b);
+        Motor.B.setSpeed(50 + b);
+        Motor.C.setSpeed(50 - b);
         Motor.B.backward();
         Motor.C.backward();
     }
-
     public void graytask(){
-        try {
+        try{
+            Motor.A.stop();
             Motor.B.stop();
             Motor.C.stop();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
+
         }catch (Exception e){
         }
     }

@@ -3,6 +3,7 @@ import lejos.nxt.*;
 public class ColorChecker {
     static int min_lightValue = 0;
     static int max_lightValue = 0;
+    static int haiiro_lightValue = 0;
     public int lightAverage;
 
     boolean Valuecheck = false;
@@ -14,6 +15,7 @@ public class ColorChecker {
         while (Valuecheck != true) {
             LCD.drawInt(min_lightValue, 0, 1);
             LCD.drawInt(max_lightValue, 0, 2);
+            LCD.drawInt(haiiro_lightValue, 0, 3);
             if (touch.isPressed() == true) {
                 Valuecheck = true;
 
@@ -21,7 +23,7 @@ public class ColorChecker {
         }
 
         lightAverage = (min_lightValue + max_lightValue) / 2;
-        LCD.drawInt(lightAverage, 0, 3);
+        //LCD.drawInt(lightAverage, 0, 3);
         return lightAverage;
     }
     public static void kuro(){
@@ -31,5 +33,14 @@ public class ColorChecker {
     public static void shiro(){
 
         min_lightValue = light.readNormalizedValue();
+    }
+    public static void haiiro(){
+
+        haiiro_lightValue = light.readNormalizedValue();
+
+    }
+    public int haiiroreturn(){
+        return haiiro_lightValue;
+
     }
 }

@@ -7,11 +7,12 @@ public class Mathmatical{
     double p_coe;
     double i_coe;
     double d_coe;
-    Mathmatical(double p_coe,double i_coe,double d_coe){
+    int a;
+    Mathmatical(double p_coe,double i_coe,double d_coe,int a){
         this.p_coe = p_coe;
         this.i_coe = i_coe;
         this.d_coe = d_coe;
-
+        this.a = a;
     }
     public double pid(int ava,double cur){
         double p,i,d;
@@ -25,8 +26,11 @@ public class Mathmatical{
         p = p_coe*diff[1];
         i = i_coe*integral;
         d = d_coe*(diff[1]-diff[0])/delta_t;
-        cur = p+i+d;
-        cur2 = p/2+i+d;
+        if(a == 1) {
+            cur = p + i + d;
+        }else {
+            cur = p / 2 + i + d;
+        }
         return cur;
     }
 }

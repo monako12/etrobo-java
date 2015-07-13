@@ -7,11 +7,12 @@ public class black {
 		Button.ESCAPE.addButtonListener(new EscapeListener());
 		Button.RIGHT.addButtonListener(new RightListener());
 		Button.LEFT.addButtonListener(new LeftListener());
-        LineCheck linecheck = new LineCheck();
-        while(true){
-            linecheck.Check();
-        }
-	    //ColorChecker color = new ColorChecker();
+		Button.ENTER.addButtonListener(new EnterListener());
+		LineCheck linecheck = new LineCheck();
+		while(true){
+			linecheck.Check();
+		}
+		//ColorChecker color = new ColorChecker();
 		//color.Extract();
 		//color.ganegane();
 	}
@@ -29,17 +30,25 @@ public class black {
 	static class RightListener implements ButtonListener {
 
 		public void buttonPressed(Button button) {
-        ColorChecker.kuro();
+			ColorChecker.kuro();
 
 		}
 		public void buttonReleased(Button button){}
 	}
-		static class LeftListener implements ButtonListener {
+	static class LeftListener implements ButtonListener {
 
-			public void buttonPressed(Button button) {
-				ColorChecker.shiro();
+		public void buttonPressed(Button button) {
+			ColorChecker.shiro();
 
-			}
-			public void buttonReleased(Button button){}
 		}
+		public void buttonReleased(Button button){}
+	}
+	static class EnterListener implements ButtonListener {
+
+		public void buttonPressed(Button button) {
+			ColorChecker.haiiro();
+
+		}
+		public void buttonReleased(Button button){}
+	}
 }
