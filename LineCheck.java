@@ -35,7 +35,13 @@ public class LineCheck {
         int haiiro_max = haiiro+3;
 
         if ( haiiro_min < now && now < haiiro_max) {
-                drivemode.graytask();
-            }
+            i++;
+        }else if( haiiro_min >= now ){
+            i = 0;
+        }
+
+        if(i == 10){
+            drivemode.graytask();
+        }
     }
 }
